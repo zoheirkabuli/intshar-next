@@ -35,6 +35,7 @@ const Logo = () => {
             width: '4.2rem',
           },
         }}
+        priority
       />
       <p
         css={{
