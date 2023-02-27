@@ -12,12 +12,12 @@ const vazir = Vazirmatn({ subsets: ['arabic'], weight: 'variable' });
 // * theme
 const theme = {
   colors: {
-    colorPrimary: '#fec200',
-    colorSecondary: '#f4cf4b',
-    colorBg: '#d1d2d64f',
-    colorDarkerBg: '#d9d9d9',
-    colorNightBg: '#1e2f47',
-    colorNightDarkerBg: '#1e2f47',
+    primary: '#fec200',
+    secondary: '#f4cf4b',
+    bg: '#d1d2d64f',
+    darkerBg: '#d9d9d9',
+    nightBg: '#1e2f47',
+    nightDarkerBg: '#1e2f47',
   },
   size: {
     width: '91.666667%',
