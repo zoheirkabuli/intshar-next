@@ -3,6 +3,9 @@ import '@/styles/globals.css';
 import { Vazirmatn } from 'next/font/google';
 import { ThemeProvider } from '@emotion/react';
 
+// * components
+import Layout from '@/components/layout/Layout';
+
 // * font
 const vazir = Vazirmatn({ subsets: ['arabic'], weight: 'variable' });
 
@@ -31,7 +34,9 @@ export default function App({ Component, pageProps }) {
         }
       `}</style>
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   );
