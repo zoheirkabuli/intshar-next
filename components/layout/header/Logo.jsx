@@ -28,9 +28,12 @@ const Logo = () => {
         height={isMobile ? 50 : 100}
         alt="الانتشار"
         css={{
-          width: isMobile ? '4.2rem' : ' 6rem',
+          width: '6rem',
           height: 'auto',
           aspectRatio: '1',
+          '@media screen and (max-width:768px)': {
+            width: '4.2rem',
+          },
         }}
       />
       <p
