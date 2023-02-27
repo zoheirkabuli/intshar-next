@@ -4,8 +4,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>انتشار</title>
-        <meta name="description" content="انتشار" />
+        <title>الانتشار</title>
+        <meta
+          name="description"
+          content="شركة رائدة في مجال الخدمات الالكترونية وتوزيع بطاقات الهدايا الرقمية"
+        />
       </Head>
       <h1>سلام دنیا!</h1>
     </>
