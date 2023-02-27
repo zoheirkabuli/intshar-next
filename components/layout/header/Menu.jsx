@@ -11,7 +11,7 @@ const Menu = () => {
   const openHandler = () => {
     setIsOpen(!isOpen);
   };
-  console.log(isOpen);
+
   return (
     <>
       <HamburgerBtn
