@@ -24,8 +24,8 @@ const Logo = () => {
     >
       <Image
         src={logo}
-        width={isMobile ? 50 : 100}
-        height={isMobile ? 50 : 100}
+        width={70}
+        height={70}
         alt="الانتشار"
         css={{
           width: '6rem',
