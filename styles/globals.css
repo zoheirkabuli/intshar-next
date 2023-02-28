@@ -62,3 +62,23 @@ img,
 video {
   max-width: 100%;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9a832e;
+}

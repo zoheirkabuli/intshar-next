@@ -18,7 +18,9 @@ const Logo = () => {
         alignItems: 'center',
         gap: '1rem',
         '@media screen and (max-width:768px)': {
-          order: '2',
+          'header &': {
+            order: '2',
+          },
         },
       }}
     >
@@ -37,17 +39,20 @@ const Logo = () => {
         }}
         priority
       />
-      <p
+      <span
         css={{
           fontSize: '3rem',
           fontWeight: 900,
           '@media screen and (max-width:768px)': {
-            display: 'none',
+            fontSize: '2rem',
+            'header &': {
+              display: 'none',
+            },
           },
         }}
       >
         الانتشار
-      </p>
+      </span>
     </Link>
   );
 };

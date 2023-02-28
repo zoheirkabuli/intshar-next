@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
           flexDirection: 'column',
           gap: '1rem',
           flex: '1 0 0',
+          minHeight: '200vh',
         }}
       >
         {children}

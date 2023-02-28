@@ -15,6 +15,7 @@ const Header = () => {
         top: '0',
         boxShadow: '0 5px 15px -5px #00000021',
         zIndex: '5',
+        background: 'white',
       }}
     >
       <nav
