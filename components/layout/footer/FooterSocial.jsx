@@ -17,7 +17,6 @@ const FooterSocial = () => {
           display: 'flex',
 
           '& > svg': {
-            width: '100%',
             width: '2rem',
             height: '2rem',
             fill: '#0000008A',

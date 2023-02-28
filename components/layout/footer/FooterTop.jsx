@@ -30,7 +30,7 @@ const FooterTop = () => {
       })}
     >
       <div
-        css={(theme) => ({
+        css={{
           backgroundColor: '#F6F6F6',
           padding: '2rem 2.5rem',
           flex: '1 0 0',
@@ -38,7 +38,7 @@ const FooterTop = () => {
           display: 'flex',
           flexDirection: 'column',
           gap: '2.5rem',
-        })}
+        }}
       >
         <Logo />
         <p css={{ textAlign: 'justify', color: '#0009' }}>
@@ -49,9 +49,9 @@ const FooterTop = () => {
         <FooterSocial />
       </div>
       <div
-        css={(theme) => ({
+        css={{
           flex: '2 0 0',
-        })}
+        }}
       ></div>
     </div>
   );

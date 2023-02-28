@@ -1,15 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import Link from 'next/link';
 import Image from 'next/image';
-import useMediaQuery from '@/lib/useMediaQuery';
 
 // * assets
 
 import logo from '@/assets/img/logo.webp';
 
 const Logo = () => {
-  const isMobile = useMediaQuery(768);
-
   return (
     <Link
       href="/"
