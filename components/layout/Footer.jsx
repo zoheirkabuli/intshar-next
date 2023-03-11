@@ -10,7 +10,7 @@ const Footer = () => {
       css={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '1.5rem',
+        gap: '4rem',
         width: '100%',
         alignItems: 'center',
       }}
