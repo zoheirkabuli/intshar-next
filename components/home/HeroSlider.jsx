@@ -27,15 +27,29 @@ const HeroSlider = () => {
       effect={'coverflow'}
       grabCursor={true}
       centeredSlides={true}
-      slidesPerView={'auto'}
+      slidesPerView={1}
+      spaceBetween={20}
       modules={[EffectCoverflow]}
       coverflowEffect={{
         rotate: 0,
         stretch: 100,
-        depth: 100,
-        modifier: 6.2,
-        scale: 1.05,
+        depth: 0,
+        modifier: 0,
+        scale: 1,
         slideShadows: false,
+      }}
+      breakpoints={{
+        768: {
+          slidesPerView: 'auto',
+          spaceBetween: 0,
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 100,
+            depth: 100,
+            modifier: 6.2,
+            scale: 1.05,
+          },
+        },
       }}
       loop={true}
       loopedSlides={2}
@@ -62,6 +76,10 @@ const HeroSlider = () => {
                 color: 'white',
                 fontSize: '4rem',
                 borderRadius: '1rem',
+                '@media screen and (max-width:768px)': {
+                  fontSize: '1.8rem',
+                  inset: 'auto 2rem 2.5rem auto',
+                },
               }}
             >
               شريحة 4G من اسياسيل
