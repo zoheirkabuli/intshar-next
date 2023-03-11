@@ -1,5 +1,8 @@
 import Head from 'next/head';
 
+// * components
+import HeroSlider from '@/components/home/HeroSlider';
+
 export default function Home() {
   return (
     <>
@@ -10,7 +13,7 @@ export default function Home() {
           content="شركة رائدة في مجال الخدمات الالكترونية وتوزيع بطاقات الهدايا الرقمية"
         />
       </Head>
-      <h1>سلام دنیا!</h1>
+      <HeroSlider />
     </>
   );
 }
