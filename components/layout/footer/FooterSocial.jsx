@@ -17,8 +17,7 @@ const FooterSocial = () => {
           display: 'flex',
 
           '& > svg': {
-            width: '2rem',
-            height: '2rem',
+            fontSize: '2.5rem',
             fill: '#0000008A',
             transition: 'fill 0.3s',
             ':hover': {

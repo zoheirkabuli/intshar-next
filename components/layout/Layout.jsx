@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
           display: 'flex',
           flexDirection: 'column',
           gap: '1rem',
-          flex: '1 0 0',
         }}
       >
         {children}
