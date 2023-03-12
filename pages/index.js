@@ -1,9 +1,12 @@
 import Head from 'next/head';
+import { gql } from '@apollo/client';
+import client from '@/lib/apollo-client';
 
 // * components
 import HeroSlider from '@/components/home/HeroSlider';
 
-export default function Home() {
+export default function Home({ heroCarousel }) {
+  console.log(heroCarousel);
   return (
     <>
       <Head>
@@ -16,4 +19,32 @@ export default function Home() {
       <HeroSlider />
     </>
   );
+}
+
+export async function getServerSideProps(ctx) {
+  const {
+    data: { imageCarousel },
+  } = await client.query({
+    query: gql`
+      query MyQuery(
+        $where: ImageCarouselWhereUniqueInput = { title: "Hero Image Carousel" }
+      ) {
+        imageCarousel(where: $where) {
+          id
+          slides {
+            title
+            image {
+              url
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      heroCarousel: imageCarousel,
+    },
+  };
 }
