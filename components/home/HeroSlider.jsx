@@ -56,21 +56,37 @@ const HeroSlider = () => {
     >
       {dummy.map((num) => (
         <SwiperSlide key={num}>
-          <div css={{ position: 'relative', aspectRatio: '90/55' }}>
+          <div
+            css={{
+              alignItems: 'flex-end',
+              aspectRatio: '90/55',
+              display: 'flex',
+              isolation: 'isolate',
+              padding: '5.5rem 8rem',
+              position: 'relative',
+              width: '100%',
+              '@media screen and (max-width:768px)': {
+                padding: '2.5rem 2rem',
+              },
+            }}
+          >
             <Image
               src={img}
+              width={900}
+              height={550}
               alt="شريحة 4G من اسياسيل"
               css={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
                 borderRadius: '2rem',
+                position: 'absolute',
+                inset: '0',
+                zIndex: '-1',
               }}
             />
             <h2
               css={{
-                position: 'absolute',
-                inset: 'auto 5.5rem 8rem auto',
                 padding: '1rem 2rem',
                 backgroundColor: '#00000085',
                 color: 'white',
@@ -78,7 +94,6 @@ const HeroSlider = () => {
                 borderRadius: '1rem',
                 '@media screen and (max-width:768px)': {
                   fontSize: '1.8rem',
-                  inset: 'auto 2rem 2.5rem auto',
                 },
               }}
             >
