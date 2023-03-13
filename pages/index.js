@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { gql } from '@apollo/client';
 import client from '@/lib/apollo-client';
 
 // * query
@@ -8,6 +7,7 @@ import { GET_IMAGE_CAROUSEL_BY_TITLE } from '@/lib/queries';
 
 // * components
 import HeroSlider from '@/components/home/HeroSlider';
+import HomeAbout from '@/components/home/HomeAbout';
 
 export default function Home({ heroCarousel }) {
   return (
@@ -20,6 +20,7 @@ export default function Home({ heroCarousel }) {
         />
       </Head>
       <HeroSlider carousel={heroCarousel} />
+      <HomeAbout />
     </>
   );
 }

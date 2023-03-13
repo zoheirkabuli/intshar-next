@@ -7,11 +7,6 @@ import { EffectCoverflow } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 
-// * assets
-import img from '../../assets/img/app.webp';
-
-const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const HeroSlider = ({ carousel }) => {
   return (
     <Swiper
