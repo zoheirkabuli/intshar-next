@@ -2,6 +2,10 @@ import Head from 'next/head';
 import { gql } from '@apollo/client';
 import client from '@/lib/apollo-client';
 
+// * query
+
+import { GET_IMAGE_CAROUSEL_BY_TITLE } from '@/lib/queries';
+
 // * components
 import HeroSlider from '@/components/home/HeroSlider';
 
@@ -24,22 +28,8 @@ export async function getServerSideProps() {
   const {
     data: { imageCarousel },
   } = await client.query({
-    query: gql`
-      query MyQuery(
-        $where: ImageCarouselWhereUniqueInput = { title: "Hero Image Carousel" }
-      ) {
-        imageCarousel(where: $where) {
-          id
-          slides {
-            id
-            title
-            image {
-              url
-            }
-          }
-        }
-      }
-    `,
+    query: GET_IMAGE_CAROUSEL_BY_TITLE,
+    variables: { title: 'Hero Image Carousel' },
   });
 
   return {
