@@ -6,7 +6,6 @@ import client from '@/lib/apollo-client';
 import HeroSlider from '@/components/home/HeroSlider';
 
 export default function Home({ heroCarousel }) {
-  console.log(heroCarousel);
   return (
     <>
       <Head>
@@ -16,12 +15,12 @@ export default function Home({ heroCarousel }) {
           content="شركة رائدة في مجال الخدمات الالكترونية وتوزيع بطاقات الهدايا الرقمية"
         />
       </Head>
-      <HeroSlider />
+      <HeroSlider carousel={heroCarousel} />
     </>
   );
 }
 
-export async function getServerSideProps(ctx) {
+export async function getServerSideProps() {
   const {
     data: { imageCarousel },
   } = await client.query({
@@ -32,6 +31,7 @@ export async function getServerSideProps(ctx) {
         imageCarousel(where: $where) {
           id
           slides {
+            id
             title
             image {
               url
@@ -44,7 +44,7 @@ export async function getServerSideProps(ctx) {
 
   return {
     props: {
-      heroCarousel: imageCarousel,
+      heroCarousel: imageCarousel.slides,
     },
   };
 }

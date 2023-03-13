@@ -12,7 +12,7 @@ import img from '../../assets/img/app.webp';
 
 const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const HeroSlider = () => {
+const HeroSlider = ({ carousel }) => {
   return (
     <Swiper
       css={(theme) => ({
@@ -54,7 +54,56 @@ const HeroSlider = () => {
       loop={true}
       loopedSlides={2}
     >
-      {dummy.map((num) => (
+      {carousel.map((slide) => (
+        <SwiperSlide key={slide.id}>
+          <div
+            css={{
+              alignItems: 'flex-end',
+              aspectRatio: '90/55',
+              display: 'flex',
+              isolation: 'isolate',
+              padding: '5.5rem 8rem',
+              position: 'relative',
+              width: '100%',
+              '@media screen and (max-width:768px)': {
+                padding: '2.5rem 2rem',
+              },
+            }}
+          >
+            <Image
+              src={slide.image.url}
+              width={900}
+              height={550}
+              alt={slide.title}
+              css={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                borderRadius: '2rem',
+                position: 'absolute',
+                inset: '0',
+                zIndex: '-1',
+              }}
+              priority
+            />
+            <h2
+              css={{
+                padding: '1rem 2rem',
+                backgroundColor: '#00000085',
+                color: 'white',
+                fontSize: '4rem',
+                borderRadius: '1rem',
+                '@media screen and (max-width:768px)': {
+                  fontSize: '1.8rem',
+                },
+              }}
+            >
+              {slide.title}
+            </h2>
+          </div>
+        </SwiperSlide>
+      ))}
+      {/* {dummy.map((num) => (
         <SwiperSlide key={num}>
           <div
             css={{
@@ -101,7 +150,7 @@ const HeroSlider = () => {
             </h2>
           </div>
         </SwiperSlide>
-      ))}
+      ))} */}
     </Swiper>
   );
 };
