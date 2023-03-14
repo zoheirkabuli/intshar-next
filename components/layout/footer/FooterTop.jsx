@@ -19,7 +19,7 @@ const FooterTop = () => {
         borderTop: `0.2rem solid ${theme.colors.darkerBg}`,
         paddingTop: '3rem',
         position: 'relative',
-        marginTop: '2rem',
+        marginTop: '3rem',
         '@media screen and (max-width:768px)': {
           flexDirection: 'column',
         },
