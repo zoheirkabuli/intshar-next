@@ -2,7 +2,6 @@ import Head from 'next/head';
 import client from '@/lib/apollo-client';
 
 // * query
-
 import { GET_IMAGE_CAROUSEL_BY_TITLE } from '@/lib/queries';
 
 // * components

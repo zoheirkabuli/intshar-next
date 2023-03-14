@@ -2,6 +2,8 @@ import 'normalize.css';
 import '@/styles/globals.css';
 import { Vazirmatn } from 'next/font/google';
 import { ThemeProvider } from '@emotion/react';
+import { ApolloProvider } from '@apollo/client';
+import client from '@/lib/apollo-client';
 
 // * components
 import Layout from '@/components/layout/Layout';
@@ -33,11 +35,13 @@ export default function App({ Component, pageProps }) {
           font-family: ${vazir.style.fontFamily};
         }
       `}</style>
-      <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <ApolloProvider client={client}>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      </ApolloProvider>
     </>
   );
 }

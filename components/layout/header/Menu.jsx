@@ -1,16 +1,24 @@
 /** @jsxImportSource @emotion/react */
 import Link from 'next/link';
 import { useState } from 'react';
+import { useQuery } from '@apollo/client';
+
+import { GET_ALL_PAGES } from '@/lib/queries';
 
 // * components
 import HamburgerBtn from '@/components/buttons/HamburgerBtn';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { data, loading, error } = useQuery(GET_ALL_PAGES);
 
   const openHandler = () => {
     setIsOpen(!isOpen);
   };
+
+  if (error) {
+    return <p>Error!</p>;
+  }
 
   return (
     <>
@@ -65,15 +73,27 @@ const Menu = () => {
           },
         })}
       >
-        <li>
-          <Link href="/">الرئيسية</Link>
-        </li>
-        <li>
-          <Link href="/">الرئيسية</Link>
-        </li>
-        <li>
-          <Link href="/">الرئيسية</Link>
-        </li>
+        {loading ? (
+          <p>تحميل...</p>
+        ) : (
+          <>
+            <li>
+              <Link href="/">الرئيسية</Link>
+            </li>
+            {data.pages.map((page) => (
+              <li key={page.id}>
+                <Link
+                  href={{
+                    pathname: '/[pagePath]',
+                    query: { pagePath: page.path },
+                  }}
+                >
+                  {page.title}
+                </Link>
+              </li>
+            ))}
+          </>
+        )}
       </ul>
     </>
   );
